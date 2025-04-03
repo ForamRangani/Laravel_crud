@@ -22,6 +22,7 @@ Route::prefix('categories')->name('category.')->group(function(){
 });
 
 Route::resource('subcategories', SubcategoryController::class);
+
 Route::resource('products', ProductController::class);
 Route::get('/get-subcategories', [ProductController::class, 'getSubcategories'])->name('getSubcategories');
 // Route::get('subcategory/{id}/edit', [SubcategoryController::class, 'edit'])->name('subcategory.edit');

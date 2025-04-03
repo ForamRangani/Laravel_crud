@@ -17,19 +17,17 @@ class CategoryController extends Controller
     }
 
     public function show($id)
-{
-    $category = Category::findOrFail($id);
-    return view('backend.categories.show', compact('category'));
-}
+    {
+             $category = Category::findOrFail($id);
+             return view('backend.categories.show', compact('category'));
+    }
 
-    // Show the form for creating a new category
     public function create()
 
     {
         return view('backend.categories.create');
     }
 
-    //Store the newly created category in the database
     public function store(Request $request)
     {
         $request->validate([
@@ -42,10 +40,9 @@ class CategoryController extends Controller
 
         ]);
 
-        return redirect()->route('category.index')->with('success', 'Category created successfully.');
+        return redirect()->route('category.index')->with('success', 'Category created successfully...');
     }
 
-    // Show the form for editing an existing category
     public function edit($id)
     {
         $category = Category::findOrFail($id);
